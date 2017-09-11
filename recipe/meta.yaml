@@ -45,9 +45,6 @@ build:
   number: 12  # [linux]
   number: 12  # [osx]
   detect_binary_files_with_prefix: true
-  features:
-    - vc9  # [win and py27]
-    - vc14  # [win and (py35 or py36)]
 
 requirements:
   build:
@@ -100,13 +97,9 @@ requirements:
     - zlib
     - libxcb  # [linux]
     - openssl 1.0.*  # [not osx]
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
   run:
     - openssl 1.0.*  # [not osx]
     - libxcb  # [linux]
-    - vc 9  # [win and py27]
-    - vc 14  # [win and (py35 or py36)]
 
 test:
   requires:
