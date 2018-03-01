@@ -41,6 +41,11 @@ source:
 build:
   detect_binary_files_with_prefix: true
   merge_build_host: True
+  missing_dso_whitetlist:  # [osx]
+    - /usr/lib/libbsm.0.dylib  # [osx]
+    - /usr/lib/libcups.2.dylib  # [osx]
+    - /usr/lib/libresolv.9.dylib  # [osx]
+    - /usr/lib/libsandbox.1.dylib  # [osx]
 
 requirements:
   build:
