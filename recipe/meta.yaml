@@ -46,6 +46,7 @@ build:
   number: 12  # [win]
   number: 14  # [linux]
   number: 14  # [osx]
+  skip: True  # [win and vc != 9]
   detect_binary_files_with_prefix: true
   features:
     - vc{{ vc }} # [win]
