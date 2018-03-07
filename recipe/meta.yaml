@@ -47,7 +47,6 @@ source:
 build:
   skip: True  # [win and vc != 14]
   detect_binary_files_with_prefix: true
-  # merge_build_host: True
   missing_dso_whitelist:  # [osx]
     - /usr/lib/libbsm.0.dylib  # [osx]
     - /usr/lib/libcups.2.dylib  # [osx]
