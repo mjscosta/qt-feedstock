@@ -62,19 +62,16 @@ source:
 
 build:
   skip: True  # [win and vc != 14]
-  detect_binary_files_with_prefix: true
   # QtWebEngine fails on Linux unless we merge
   merge_build_host: true  # [linux]
-  run_exports:
-    - {{ pin_subpackage('qt', max_pin='x.x') }}
   missing_dso_whitelist:  # [osx]
     - /usr/lib/libbsm.0.dylib  # [osx]
     - /usr/lib/libcups.2.dylib  # [osx]
     - /usr/lib/libresolv.9.dylib  # [osx]
     - /usr/lib/libsandbox.1.dylib  # [osx]
     - /System/Library/Frameworks/CoreLocation.framework/**  # [osx]
-  features:
-    - vc{{ vc }} # [win]
+  run_exports:
+    - {{ pin_subpackage('qt', max_pin='x.x') }}
 
 requirements:
   build:
@@ -148,10 +145,7 @@ requirements:
     - libxcb                             # [linux]
     # We cannot install OpenSSL into the prefix when building qtwebengine
     # on linux as BoringSSL and OpenSSL then conflict with each other.
-    - openssl 1.0.*                      # [win]
-  run:
-    - openssl 1.0.*                      # [not osx]
-    - libxcb                             # [linux]
+    - openssl                            # [win]
 
 test:
   requires:
