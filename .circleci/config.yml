@@ -1,6 +1,10 @@
 version: 2
 
 jobs:
+  build:
+    branches:
+      only:
+        - feedstock_conda-forge-update-5.11
   build_linux_:
     working_directory: ~/test
     machine: true
